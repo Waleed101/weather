@@ -40,7 +40,7 @@ Weather.kelvinToCelsius = function (value) {
 };
 
 Weather.getCurrent = function (city, callback) {
-  var url = "http://openweathermap.org/data/2.1/find/city?q=" + encodeURIComponent(city) + "&cnt=1";
+ var url = "http://api.openweathermap.org/data/2.5/weather?q=" + encodeURIComponent(city) +"&APPID=5d03adbfccd4ca3de9caa8729188293d1";
 
   return this._getJSON(url, function (data) {
     callback(new Weather.Current(data));
@@ -48,7 +48,7 @@ Weather.getCurrent = function (city, callback) {
 };
 
 Weather.getForecast = function (city, callback) {
-  var url = "http://openweathermap.org/data/2.1/forecast/city?q=" + encodeURIComponent(city) + "&cnt=1";
+  var url = "http://api.openweathermap.org/data/2.5/weather?q=" + encodeURIComponent(city) +"&APPID=5d03adbfccd4ca3de9caa8729188293d1";
 
   return this._getJSON(url, function (data) {
     callback(new Weather.Forecast(data));
